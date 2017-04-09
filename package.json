@@ -10,7 +10,7 @@
   ],
   "main": "index.js",
   "bin": {
-    "sglc": "./bin/cli"
+    "sgc": "./bin/cli"
   },
   "repository": {
     "type": "git",

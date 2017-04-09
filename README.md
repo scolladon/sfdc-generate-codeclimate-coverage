@@ -1,4 +1,4 @@
-# sfdc-generate-lcov-coverage
+# sfdc-generate-codeclimate-coverage
 
 Code coverage converter to codeclimate format from deployment result
 
@@ -24,9 +24,9 @@ yarn globally add sfdc-generate-lcov-coverage
 ### Command Line
 
 ```
-$ sglc -h
+$ sgc -h
 
-  Usage: sglc [options]
+  Usage: sgc [options]
 
   Code coverage converter to codeclimate format from deployment result
 
@@ -43,10 +43,10 @@ $ sglc -h
 ### Module
 
 ```
-  const sglc = require('sfdc-generate-lcov-coverage');
+  const sgc = require('sfdc-generate-lcov-coverage');
 
   let deployResult = {} // deployment result file, pipe it from deployment or read it from a file
-  sglc({
+  sgc({
     'repotoken':'azertyuioiuytrez', // code climate repo token
     'commit': 'oiuyrertyuiopoiuy', // git commit id
     'branch': 'master', // branch name on which the deploy has been done
