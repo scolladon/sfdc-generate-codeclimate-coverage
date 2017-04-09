@@ -10,13 +10,13 @@ Windows is not tested.
 ### Installing
 
 ```
-npm install -g sfdc-generate-lcov-coverage
+npm install -g sfdc-generate-codeclimate-coverage
 ```
 
 or
 
 ```
-yarn globally add sfdc-generate-lcov-coverage
+yarn globally add sfdc-generate-codeclimate-coverage
 ```
 
 ## Usage
@@ -37,13 +37,13 @@ $ sgc -h
     -b, --branch                branch name
     -r, --repo                  salesforce repository path : ['.']
     -d, --deployfile            salesforce deploy result containing file : ['./deployResult.json']
-    -o, --output                salesforce code climate coverage output file : ['./coverage_<epoch timestamp>.json']
+    -o, --output                salesforce code climate coverage output file : ['./coverage.json']
 ```
 
 ### Module
 
 ```
-  const sgc = require('sfdc-generate-lcov-coverage');
+  const sgc = require('sfdc-generate-codeclimate-coverage');
 
   let deployResult = {} // deployment result file, pipe it from deployment or read it from a file
   sgc({
