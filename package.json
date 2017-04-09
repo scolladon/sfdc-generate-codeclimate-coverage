@@ -1,6 +1,6 @@
 {
   "name": "sfdc-generate-codeclimate-coverage",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Code coverage converter to codeclimate format from deployment result",
   "keyword": [
     "salesforce",
