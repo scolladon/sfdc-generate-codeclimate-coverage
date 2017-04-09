@@ -23,7 +23,6 @@ module.exports = (config,deployResult,logger) => {
         "cwd": config.repo
       }).stdout
     ).toString('utf8').trim();
-    console.log(committed_at)
 
     let coverage = {
       'repo_token':config.repotoken,
