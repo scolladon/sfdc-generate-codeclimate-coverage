@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+const program = require('commander');
+const orchestrator = require('../index.js');
+const pjson = require('../package.json');
+const fs = require('fs');
+
+program
+  .description(pjson.description)
+  .version(pjson.version)
+  .option('-t, --repotoken [string]', 'code climate repo toke', '')
+  .option('-c, --commit [string]', 'commit sha', '')
+  .option('-b, --branch [string]', 'branch name', '')
+  .option('-r, --repo [dir]', 'salesforce repository path [.path/to/repo]', '.')
+  .option('-d, --deployfile [dir]', 'salesforce deploy result containing file [.path/to/file]', './deployResult.json')
+  .option('-o, --output [dir]', 'salesforce code climate coverage output file [.path/to/file]', './coverage.json')
+  .parse(process.argv);
+
+orchestrator(program, JSON.parse(fs.readFileSync(program.deployfile,'utf8')), console.log)
+.then(coverage => {
+  fs.writeFileSync(program.output, JSON.stringify(coverage));
+  console.log(program.output + ' written');
+}).catch(function(err){
+  console.log(err);
+});
