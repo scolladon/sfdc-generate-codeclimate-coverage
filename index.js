@@ -12,7 +12,7 @@ module.exports = (config,deployResult,logger) => {
     || typeof config.commit === 'undefined' || config.commit === null
     || typeof config.branch === 'undefined' || config.branch === null
     || typeof config.repo === 'undefined' || config.repo === null) {
-      reject(new Error('Not enough config options'));
+      return reject(new Error('Not enough config options'));
     }
 
     let totalLine = 0;
