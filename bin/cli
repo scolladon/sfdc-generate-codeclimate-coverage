@@ -20,6 +20,6 @@ orchestrator(program, JSON.parse(fs.readFileSync(program.deployfile,'utf8')), co
 .then(coverage => {
   fs.writeFileSync(program.output, JSON.stringify(coverage));
   console.log(program.output + ' written');
-}).catch(function(err){
+}).catch(err => {
   console.log(err);
 });
